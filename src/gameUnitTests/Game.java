@@ -6,6 +6,8 @@ public class Game {
     private int balance;
     private int attempts;
     private int delta = 5;
+    private int winKoef = 10;
+    private int looseKoef = 5;
 
 
     public int getBalance() {
@@ -25,10 +27,10 @@ public class Game {
         int match = word.openLetter(letter);
 
         if (match == 0) balance -= delta;
-        else {
-            if (match == 1) balance += delta;
-            else balance += match * delta;
-        }
+        else
+
+            balance += match * delta;
+
         attempts++;
 
     }
@@ -39,10 +41,11 @@ public class Game {
     }
 
     public void openWord(String w) throws WrongWordLengthException {
-        if (word.openWord(w) == true) balance += delta * 10;
-        else balance -= delta * 5;
+     //   attempts = attempts+1;
+        if (word.openWord(w) == true) balance += delta * winKoef;
+        else balance -= delta * looseKoef;
         attempts++;
-        attempts = attempts+1;
+
     }
 
 

@@ -1,7 +1,5 @@
 package gameUnitTests;
 
-
-//main with game with random chars generation
 public class Word {
 
     private String word;
@@ -25,7 +23,6 @@ public class Word {
 
             }
         }
-
         return count;
     }
 
@@ -40,9 +37,11 @@ public class Word {
                 guessed[i] = true;
 
             }
-            return false;
+          //  return false;
+            return true;
         }
-        return true;
+       // return true;
+        return false;
     }
 
     public String getWordWithStars() {

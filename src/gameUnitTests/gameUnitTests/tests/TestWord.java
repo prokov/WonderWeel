@@ -31,6 +31,9 @@ public class TestWord {
         word.openLetter('p');
         assertEquals("app**", word.getWordWithStars());
 
+        word.openLetter('а');
+        assertEquals("app**", word.getWordWithStars());
+
 
     }
 
@@ -69,6 +72,30 @@ public class TestWord {
         Word word = new Word("apple", "some description");
 
         word.openWord("longword");
+
+
+    }
+
+    @Test //valid word
+    public void isWinWord() throws WrongWordLengthException {
+
+        word.openWord("apple");
+        assertEquals(true, word.isWin());
+
+
+    }
+
+    @Test //valid word
+    public void isWinLetters() throws WrongWordLengthException {
+
+        word.openLetter('a');
+        word.openLetter('p');
+        word.openLetter('p');
+      //  word.openLetter('l');
+        word.openLetter('e');
+
+
+        assertEquals(false, word.isWin());
 
 
     }
